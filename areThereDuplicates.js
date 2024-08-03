@@ -88,5 +88,3 @@ console.log(areThereDuplicates(1, 2, 2));
 console.log(areThereDuplicates('a', 'b', 'c', 'a'));
 console.log(areThereDuplicates('a','a','4','6','7','7'))
 console.log(areThereDuplicates('a','b','4',4,7,8))
-console.log(areThereDuplicates(1, 2, 0, 0, 3))
-console.log(areThereDuplicates(null, undefined, 1, 2, null));
