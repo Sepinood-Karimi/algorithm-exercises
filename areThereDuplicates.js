@@ -87,4 +87,4 @@ console.log(areThereDuplicates(1, 2, 3));
 console.log(areThereDuplicates(1, 2, 2));
 console.log(areThereDuplicates('a', 'b', 'c', 'a'));
 console.log(areThereDuplicates('a','a','4','6','7','7'))
-console.log(areThereDuplicates('a','b','4',4,7,8))
+console.log(areThereDuplicates('a','b','4',4,7,8)) // I have to ask about this from mentors in frequency counter way
