@@ -12,7 +12,7 @@ sameFrequency (22,222) // false
 **/
 
 const sameFrequency = (number1,number2) =>{
-    if (number1<0 || number2<0) return false;
+    if (number1<0 || number2<0) return "enter positive int";
     const stringNumber1 = number1.toString();
     const stringNumber2 = number2.toString();
     if (stringNumber1.length!==stringNumber2.length) return false;
