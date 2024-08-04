@@ -15,6 +15,20 @@ Space Complexity - 0(1)
 
 **/
 
-function isSubsequence() {
-  // good luck. Add any arguments you deem necessary.
+const isSubsequence = (string1,string2) => {
+  let pointer1=0;
+  let pointer2=0;
+  while(pointer2<string2.length){
+      if(pointer1<string1.length && string1[pointer1]===string2[pointer2]){
+          pointer1++;
+      }
+      pointer2++;
+  }
+  return pointer1===string1.length;
 }
+
+console.log(isSubsequence('hello', 'hello world'));
+console.log(isSubsequence('sing', 'sting'));
+console.log(isSubsequence('abc', 'abracadabra'));
+console.log(isSubsequence('abc', 'acb'));
+console.log(isSubsequence('also','I want to also be sure about the middle texts'));
