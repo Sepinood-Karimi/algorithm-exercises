@@ -19,15 +19,15 @@ Space Complexity - O(1)
 
 const minSubArrayLen = (array,target) => {
     let minLength = Infinity;
-    let startPointer = 0;
+    let startWindowIndex = 0;
     let sum =0;
 
     for(let endPointer=0;endPointer<array.length;endPointer++){
         sum+=array[endPointer];
         while (sum>=target){
-            minLength=Math.min(minLength,endPointer-startPointer+1);
-            sum-=array[startPointer];
-            startPointer++;
+            minLength=Math.min(minLength,endPointer-startWindowIndex+1);
+            sum-=array[startWindowIndex];
+            startWindowIndex++;
         }
     }
     return minLength === Infinity ? 0 : minLength;
