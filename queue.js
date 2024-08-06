@@ -30,6 +30,34 @@ class Queue {
     }
 
     dequeue(){
-        // return null or a value
+        if(!this.first) return null;
+
+        const currentFirstNode = this.first;
+
+        if(this.first === this.last){
+            this.last = null;
+        }
+        this.first = this.first.next;
+        this.size--;
+
+        return currentFirstNode.value;
+
+
     }
 }
+
+const myQueue = new Queue();
+console.log(myQueue.enqueue(10));
+console.log(myQueue.enqueue(20));
+console.log(myQueue.enqueue(30));
+console.log(myQueue.enqueue(40));
+
+console.log(myQueue.dequeue());
+console.log(myQueue.size);
+console.log(myQueue.dequeue());
+console.log(myQueue.size);
+console.log(myQueue.dequeue());
+console.log(myQueue.size);
+console.log(myQueue.dequeue());
+console.log(myQueue.size);
+console.log(myQueue.dequeue());
