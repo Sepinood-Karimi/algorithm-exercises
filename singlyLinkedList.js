@@ -46,10 +46,26 @@ class SinglyLinkedList{
         return current;
     }
     shift(){
-        // code here
+        if (!this.head) return undefined;
+        const currentHead = this.head;
+        this.head = currentHead.next;
+        this.length--;
+        if (this.length === 0) {
+            this.tail = null;
+        }
+        return currentHead;
     }
     unshift(val){
-       // code here
+        const newNode = new Node(val);
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = this.head;
+        } else {
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
     }
     get(index){
         if(index < 0 || index >= this.length) return null;
@@ -117,11 +133,23 @@ class SinglyLinkedList{
     }
 }
 
+let myList = new SinglyLinkedList();
+
+myList.unshift(10);
+myList.unshift(20);
+myList.unshift(30);
+myList.unshift(40);
+myList.print();
+
+console.log(myList.shift());
+console.log(myList.shift());
+console.log(myList.shift());
+console.log(myList.shift());
+console.log(myList.shift());
 
 
-
-
-
+console.log(myList.length);
+myList.print()
 
 
 
