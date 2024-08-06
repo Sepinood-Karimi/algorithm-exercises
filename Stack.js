@@ -28,6 +28,30 @@ class Stack {
         return ++this.size;
     }
     pop(){
-        // code here
+        if(!this.first) return null;
+
+        const currentFirstNode = this.first;
+
+        if(this.first === this.last){
+            this.last = null;
+        }
+        this.first = this.first.next;
+        this.size--;
+        return currentFirstNode.value;
     }
 }
+
+let myStack = new Stack();
+console.log(myStack.push(10));
+console.log(myStack.push(20));
+console.log(myStack.push(30));
+console.log(myStack.push(40));
+
+console.log(myStack.pop());
+console.log(myStack.size);
+console.log(myStack.pop());
+console.log(myStack.size);
+console.log(myStack.pop());
+console.log(myStack.size);
+console.log(myStack.pop());
+console.log(myStack.size);
