@@ -22,10 +22,11 @@ Space - O(1)
 // const areThereDuplicates = (...arguments) =>{
 //     let frequencyCounter = {};
 //     for(let val of arguments){
-//         if (frequencyCounter[val]){
+//         const v = JSON.stringify(val)
+//         if (frequencyCounter[v]){
 //             return true;
 //         }
-//         frequencyCounter[val] = (frequencyCounter[val] || 0) + 1;
+//         frequencyCounter[v] = 1;
 //     }
 //     return false;
 // }
@@ -35,17 +36,18 @@ Space - O(1)
  Time - O(n log n)
  Space - O(n)
  **/
-// const areThereDuplicates = (...arguments) =>{
-//     arguments.sort((a, b) => (a > b ? 1 : -1));
-//     let frequencyCounter = {};
-//     for(let val of arguments){
-//         if (frequencyCounter[val]){
-//             return true;
-//         }
-//         frequencyCounter[val] = (frequencyCounter[val] || 0) + 1;
-//     }
-//     return false;
-// }
+const areThereDuplicates = (...arguments) =>{
+    arguments.sort((a, b) => (a > b ? 1 : -1));
+    let frequencyCounter = {};
+    for(let val of arguments){
+        const v = JSON.stringify(val);
+        if (frequencyCounter[v]){
+            return true;
+        }
+        frequencyCounter[v] = 1;
+    }
+    return false;
+}
 
 /**
  Time - O(n log n)
@@ -67,19 +69,20 @@ Space - O(1)
  Time - O(n log n)
  Space - O(1)
  **/
-const areThereDuplicates = (...arguments) =>{
-    arguments.sort((a, b) => (a > b ? 1 : -1));
-    let left=0;
-    let right = left+1;
-    while(right<arguments.length){
-        if (arguments[left]===arguments[right]){
-            return true;
-        }
-        left++;
-        right++;
-    }
-    return false;
-}
+// const areThereDuplicates = (...arguments) =>{
+//     arguments.sort((a, b) => (a > b ? 1 : -1));
+//     let left=0;
+//     let right = left+1;
+//     while(right<arguments.length){
+//         if (arguments[left]===arguments[right]){
+//             console.log(left,right,typeof left,typeof right)
+//             return true;
+//         }
+//         left++;
+//         right++;
+//     }
+//     return false;
+// }
 
 
 
@@ -87,4 +90,4 @@ console.log(areThereDuplicates(1, 2, 3));
 console.log(areThereDuplicates(1, 2, 2));
 console.log(areThereDuplicates('a', 'b', 'c', 'a'));
 console.log(areThereDuplicates('a','a','4','6','7','7'))
-console.log(areThereDuplicates('a','b','4',4,7,8)) // I have to ask about this from mentors in frequency counter way
+console.log(areThereDuplicates('a','b','4',4,7,8));
